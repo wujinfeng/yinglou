@@ -1,0 +1,27 @@
+<%- include component/top.ejs %>
+<!-- 中间内容 -->
+<section class="award-content" style="height:500px;">
+    <article>
+        <form action="/login" method="post">
+            <input style="padding:5px;border-radius:3px;border:none" type="text" name="username" id="username" autofocus placeholder="用户名"><br>
+            <br>
+            <input style="padding:5px;border-radius:3px;border:none"  type="password" name="password" id="password" placeholder="密码"><br>
+            <br>
+            <input style="padding:5px;border-radius:3px;border:none"  type="submit" value="登陆">
+        </form>
+    </article>
+</section>
+<!-- 底部 -->
+<%- include component/bottom.ejs %>
+<script>
+    $('input[type="submit"]').click(function (e) {
+        var username = $('#username').val();
+        var password = $('#password').val();
+        if(!username || !password){
+            e.preventDefault();
+            return   alert('请填写用户名和密码！');
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>首页标题</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="js/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="js/vendor/lightslider/css/lightslider.min.css" />
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">您正在使用 <strong>过时的</strong> 浏览器. 请 <a href="http://browsehappy.com/">更新浏览器</a> 来提高您的浏览体验.</p>
+        <![endif]-->
+    <!-- 头部 -->
+    <header>
+        <div class="logo"><img src="img/logo.jpg"></div>
+        <nav>
+            <ul>
+                <li><a class="active" href="">首页</a></li>
+                <li class="li-submenu">
+                    <a href="javascript:void(0);">签约摄影师</a>
+                    <ul class="submenu">
+                        <li><a href="">大师兄</a></li>
+                        <li><a href="">二师兄</a></li>
+                    </ul>
+                </li>
+                <li class="li-submenu">
+                    <a href="javascript:void(0);">作品集锦</a>
+                    <ul class="submenu">
+                        <li><a href="">大师兄作品集</a></li>
+                        <li><a href="">二师兄作品集</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">获奖作品</a>
+                </li>
+                <li>
+                    <a href="">客户评价</a>
+                </li>
+                <li>
+                    <a href="">最新动态</a>
+                </li>
+                <li>
+                    <a href="">联系我们</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-btn"><i class="fa fa-bars fa-2x" ></i></div>
+    </header>
+    <!-- 中间内容 -->
+    <section class="index-content">       
+        <div class="imglist">
+            <ul id="vertical" class="pc">
+              <li data-thumb="img/index/new1_thumbnail.png">
+                <img src="img/index/new1.jpg" />
+              </li>
+              <li data-thumb="img/index/new1_thumbnail.png">
+               <img src="img/index/new1.jpg" />
+              </li>
+               <li data-thumb="img/index/new1_thumbnail.png">
+                <img src="img/index/new1.jpg" />
+              </li>
+              <li data-thumb="img/index/new1_thumbnail.png">
+               <img src="img/index/new1.jpg" />
+              </li>
+               <li data-thumb="img/index/new1_thumbnail.png">
+                <img src="img/index/new1.jpg" />
+              </li>
+              <li data-thumb="img/index/new1_thumbnail.png">
+               <img src="img/index/new1.jpg" />
+              </li>
+               <li data-thumb="img/index/new1_thumbnail.png">
+                <img src="img/index/new1.jpg" />
+              </li>
+              <li data-thumb="img/index/new1_thumbnail.png">
+               <img src="img/index/new1.jpg" />
+              </li>              
+            </ul>
+            <ul class="mobile">
+                <li><img src="img/index/new1.jpg" ></li>
+                <li><img src="img/index/new1.jpg" ></li>
+                <li><img src="img/index/new1.jpg" ></li>
+            </ul>
+        </div>
+    </section>
+    <!-- 底部 -->
+    <footer>
+        <p>版权所有 &copy; 2017 XXXX公司</p>
+    </footer>
+    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="js/vendor/lightslider/js/lightslider.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    
+        $(document).ready(function() {           
+             $('#vertical').lightSlider({
+              gallery:true,
+              item:1,
+              vertical:true,
+              verticalHeight:550,
+              vThumbWidth:90,
+              thumbItem:8,
+              thumbMargin:4,
+              slideMargin:0
+            });
+        });
+   
+    </script>
+</body>
+
+</html>

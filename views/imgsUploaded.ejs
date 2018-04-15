@@ -1,0 +1,75 @@
+<%- include component/top.ejs %>
+<!-- 中间内容 -->
+<select name="dir" id="dir" style="position: absolute; left:20px;top:90px; height:35px;border-radius: 5px;">
+    <option value="index" <%= (dir=='index')?'selected':'' %> >-- 首页图片 --</option>
+    <option value="photo/photographer1" <%= (dir=='photo/photographer1')?'selected':'' %> >-- 摄影师1作品 --</option>
+    <option value="photo/photographer2" <%= (dir=='photo/photographer2')?'selected':'' %> >-- 摄影师2作品 --</option>
+</select>
+<section id="links" class="photo-content" style="padding:30px;min-height: 500px;">
+    <% for(var i = 0; i < imgs.length; i++){
+        var img = imgs[i];
+        var img_thumbnail = '';
+        var img_big = '';
+    if(img.indexOf('_thumbnail') > -1){
+        img_thumbnail = img;
+        img_big = img.replace(/_thumbnail/, '');
+        var img_big_path = '';
+        var img_thum_path = '';
+        if (pageimg == 'photo') {   //如果是作品图片
+            img_big_path = '/img/' + dir + '/' + img_big;
+            img_thum_path = '/img/' + dir + '/' + img_thumbnail;
+        } else if (pageimg == 'index') {
+            img_big_path = '/img/'+ dir + '/'  + img_big;
+            img_thum_path = '/img/'+ dir + '/'  + img_thumbnail;
+        }
+    %>
+    <a href="<%= img_big_path %>">
+        <img src="<%= img_thum_path %>">
+        <button class="delimg" style="margin-left: -33px;" data-path="<%= img_thum_path %>">X</button>
+    </a>
+    <% } %>
+    <% } %>
+</section>
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery  blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+<!-- 底部 -->
+<%- include component/bottom.ejs %>
+<script src="/js/vendor/gallery/js/blueimp-gallery.min.js"></script>
+<script>
+    //选择查看图片页面
+    $('#dir').change(function () {
+        var value = $(this).val();
+        window.location.href = '/user/imgs?dir=' + value;
+    });
+    // 删除图片
+    $('.delimg').click(function () {
+        var path = $(this).attr('data-path');
+        if (path) {
+            if (window.confirm('确定要删除吗？')) {
+                window.location.href = '/user/delete?path=' + path;
+            }
+        }
+    });
+    //图片墙
+    document.getElementById('links').onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {
+                    index: link,
+                    event: event
+                },
+                links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    };
+</script>
+</body>
+</html>

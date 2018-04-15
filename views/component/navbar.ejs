@@ -1,0 +1,35 @@
+<header>
+    <div class="logo"><img src="/img/logo.jpg"></div>
+    <nav>
+        <ul>
+            <li><a class="<%= (nav=='index')?'active':''%>" href="/">首页</a></li>
+            <li class="li-submenu">
+                <a class="<%= (nav=='photographer')?'active':''%>" href="javascript:void(0);">签约摄影师</a>
+                <ul class="submenu">
+                    <li><a href="/photographer/1">大师兄</a></li>
+                    <li><a href="/photographer/2">二师兄</a></li>
+                </ul>
+            </li>
+            <li class="li-submenu">
+                <a class="<%= (nav=='photo')?'active':''%>" href="javascript:void(0);">作品集锦</a>
+                <ul class="submenu">
+                    <li><a href="/photo/1">大师兄作品集</a></li>
+                    <li><a href="/photo/2">二师兄作品集</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/award" class="<%= (nav=='award')?'active':''%>">获奖作品</a>
+            </li>
+            <li>
+                <a href="/customer" class="<%= (nav=='customer')?'active':''%>">客户评价</a>
+            </li>
+            <li>
+                <a href="/news" class="<%= (nav=='news')?'active':''%>">最新动态</a>
+            </li>
+            <li>
+                <a href="/contact" class="<%= (nav=='contact')?'active':''%>">联系我们</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="menu-btn"><i class="fa fa-bars fa-2x" ></i></div>
+</header>

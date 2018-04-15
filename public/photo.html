@@ -1,0 +1,100 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>作品集锦</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="js/vendor/gallery/css/blueimp-gallery.min.css">
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">您正在使用 <strong>过时的</strong> 浏览器. 请 <a href="http://browsehappy.com/">更新浏览器</a> 来提高您的浏览体验.</p>
+        <![endif]-->
+    <!-- 头部 -->
+   <header>
+        <div class="logo"><img src="img/logo.jpg"></div>
+        <nav>
+            <ul>
+                <li><a class="active" href="">首页</a></li>
+                <li class="li-submenu">
+                    <a href="javascript:void(0);">签约摄影师</a>
+                    <ul class="submenu">
+                        <li><a href="">大师兄</a></li>
+                        <li><a href="">二师兄</a></li>
+                    </ul>
+                </li>
+                <li class="li-submenu">
+                    <a href="javascript:void(0);">作品集锦</a>
+                    <ul class="submenu">
+                        <li><a href="">大师兄作品集</a></li>
+                        <li><a href="">二师兄作品集</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">获奖作品</a>
+                </li>
+                <li>
+                    <a href="">客户评价</a>
+                </li>
+                <li>
+                    <a href="">最新动态</a>
+                </li>
+                <li>
+                    <a href="">联系我们</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-btn"><i class="fa fa-bars fa-2x" ></i></div>
+    </header>
+    <!-- 中间内容 -->
+    <section id="links"  class="photo-content">
+        <a href="img/photo/wu/new2.jpg" title="">
+            <img src="img/photo/wu/new1_thumbnail.png" alt="">
+        </a>
+        <a href="img/photo/wu/new1.jpg" title="">
+            <img src="img/photo/wu/new1_thumbnail.png" alt="">
+        </a>
+        <a href="img/photo/wu/new1.jpg" title="">
+            <img src="img/photo/wu/new1_thumbnail.png" alt="">
+        </a>
+    </section>
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery  blueimp-gallery-controls">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+    <!-- 底部 -->
+    <footer>
+        <p>版权所有 &copy; 2017 XXXX公司</p>
+    </footer>
+    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/vendor/gallery/js/blueimp-gallery.min.js"></script>
+    <script>
+    document.getElementById('links').onclick = function(event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {
+                index: link,
+                event: event
+            },
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    };
+    </script>
+</body>
+
+</html>

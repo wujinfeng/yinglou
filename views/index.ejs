@@ -1,0 +1,55 @@
+<%- include component/top.ejs %>
+    <!-- 中间内容 -->
+    <section class="index-content">       
+        <div class="imglist">
+            <ul id="vertical" class="pc">
+                <% for(var i=0; i<imgs.length; i++){
+                    var img = imgs[i];
+                    var img_thumbnail='';
+                    var img_big='';
+                    if(img.indexOf('_thumbnail')>-1){
+                        img_thumbnail = img;
+                        img_big = img.replace(/_thumbnail/,'');
+                    %>
+                    <li data-thumb="img/index/<%=img_thumbnail%>">
+                        <img src="img/index/<%=img_big%>" />
+                    </li>
+                    <%}%>
+                <%}%>
+            </ul>
+            <ul class="mobile">
+                <% for(var i=0; i<imgs.length; i++){
+                    var img = imgs[i];
+                    var img_thumbnail='';
+                    var img_big='';
+                    if(img.indexOf('_thumbnail')>-1){
+                        img_thumbnail = img;
+                        img_big = img.replace(/_thumbnail/,'');
+                    %>
+                    <li><img src="img/index/<%=img_big%>" ></li>
+                    <%}%>
+                <%}%>
+            </ul>
+        </div>
+    </section>
+    <!-- 底部 -->
+    <%- include component/bottom.ejs %>
+    <script src="/js/vendor/lightslider/js/lightslider.min.js"></script>
+    <script>
+        $(document).ready(function() {           
+             $('#vertical').lightSlider({
+              gallery:true,
+              item:1,
+              vertical:true,
+              verticalHeight:550,
+              vThumbWidth:90,
+              thumbItem:8,
+              thumbMargin:4,
+              slideMargin:0
+            });
+        });
+   
+    </script>
+</body>
+
+</html>

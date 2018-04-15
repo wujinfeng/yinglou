@@ -1,0 +1,26 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><%=title%></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/js/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/js/vendor/lightslider/css/lightslider.min.css" />
+    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="/js/vendor/gallery/css/blueimp-gallery.min.css">
+    <% if (nav == 'upload'){%>
+    <link rel="stylesheet" href="/js/vendor/dropzone/basic.css">
+    <script src="/js/vendor/dropzone/dropzone.js"></script>
+    <link rel="stylesheet" href="/js/vendor/dropzone/dropzone.css">
+    <%}%>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">您正在使用 <strong>过时的</strong> 浏览器. 请 <a href="http://browsehappy.com/">更新浏览器</a> 来提高您的浏览体验.</p>
+<![endif]-->
+<!-- 头部 -->
+<%- include navbar.ejs %>

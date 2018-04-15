@@ -1,0 +1,623 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 微軟正黑體, Helvetica, Arial, Verdana, sans-serif;   
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* 顶部 */
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #222;
+}
+header .logo{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    width: 100px;
+    margin-left: 40px;
+}
+header .logo img{
+    width: 100%;
+    max-height: 100%;
+}
+header nav {
+    display: block;
+    text-align: right;
+    margin-right: 50px;
+}
+
+header nav ul li {
+    display: inline-block;
+    vertical-align: middle;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+header nav ul li a {
+    display: block;
+    color: #bbb;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header nav ul li a:hover ,header nav ul li a.active{
+    color: #fff;
+}
+
+li.li-submenu {
+    position: relative;
+}
+
+li.li-submenu:hover .submenu {
+   height: 100px;
+}
+
+.submenu {
+    height: 0;
+    position: absolute;
+    z-index: 100;
+    overflow: hidden;
+    background-color: #444;
+     transition: height 0.1s;
+    -moz-transition: height 0.1s;
+    -webkit-transition: height 0.1s;
+    -o-transition: height 0.1s;
+}
+
+.submenu li {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    width: 110px;   
+}
+
+.submenu li:first-child {
+    border-bottom: 1px solid #aaa;
+}
+.menu-btn{
+    display: none;
+}
+@media  screen and (max-width: 990px) {
+    header nav {
+        display:none;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        z-index: 200;
+        background-color: #222;
+    }
+    header nav ul li {
+        display: block;
+        height: 50px;
+        text-align:left;
+        line-height: 50px;
+        border-top: 1px solid #555;
+    }
+    .menu-btn{
+        display: block;
+        position: absolute;        
+        right:50px;
+        top:25px;
+        color: #ddd;
+    }
+    .submenu {
+        right:20px;  
+        top:0;     
+    }
+}
+
+
+/* 顶部结束 */
+
+/*qq*/
+.qq-btn{
+    position: fixed;
+    right:3px;
+    bottom:50px;
+    width:100px;
+    height:128px;
+    text-align:center;
+}
+.qq-btn img {
+    width:100%;
+}
+@media screen and (max-width: 768px) {
+    .qq-btn{
+        width:60px;
+        height:62px;
+    }
+}
+
+
+/* 首页 主内容 */
+.index-content{
+    min-height:550px;
+    background: url(../img/bg.jpg)  repeat;
+}
+.index-content .mobile {
+    display: none;
+}
+.index-content .imglist{
+    max-width:1120px;
+    margin:0 auto;
+}
+.index-content .imglist img{
+    width:100%;
+}
+
+@media  screen and (max-width: 990px) {
+   .index-content .imglist .vertical{
+        display: none;
+    }
+    .index-content .mobile {
+        display: block;
+    }
+    .index-content .mobile li {
+        padding:0 10px 10px 10px;
+    }
+}
+/* 首页结束 */
+/* 摄影师 */
+.photographer-content{
+    padding:30px 30px;
+    background: url(../img/bg.jpg)  repeat;
+}
+.photographer-content > article{
+    max-width:1024px;
+    margin:0  auto;
+}
+.photographer-content .icon{
+    max-width:210px;
+    margin:0 30px 20px 0;
+    float:left;
+}
+.photographer-content .icon img{
+    width:100%;
+}
+.photographer-content .article{
+    color:#ddd;
+    font-size:16px;
+    line-height: 2em;
+}
+
+/* 摄影师结束 */
+/* 作品集锦 */
+.photo-content{
+    background: url(../img/bg.jpg)  repeat;
+    text-align:center;
+    padding: 20px 0;
+}
+
+
+
+/* 作品集锦结束 */
+/* 获奖作品 */
+.award-content{
+    padding:30px 30px;
+    background: url(../img/bg.jpg)  repeat;
+}
+.award-content article{
+    max-width:1024px;
+    margin:0 auto;
+    text-align: center;
+}
+.award-content article a{
+   text-decoration:none;
+   color: #8ACA32;
+}
+.award-content article img{
+    width:100%;
+}
+.award-content article h1{
+    color:#ddd; 
+    display: block; 
+    font-size: 24px; 
+    margin-bottom: 3px;
+}
+.award-content article .more{
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+/* 获奖作品结束 */
+/* 获奖作品详情 */
+/* 和新闻的模版一样*/
+/* 获奖作品详情结束 */
+/* 客户评价 */
+.customer-content{
+    padding:30px 60px;
+    background: url(../img/bg.jpg)  repeat;
+}
+.customer-content .speak{
+    color:#ddd;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.8;
+    margin:0;
+}
+.customer-content .author{
+    color:#8ACA32;
+    font-size:16px;
+    margin:0 0 40px 0;
+}
+/* 客户评价结束 */
+
+/* 最新动态 */
+.news-content{
+    padding:30px 20px;
+    background: url(../img/bg.jpg)  repeat;    
+}
+.news-content .warp{
+    max-width:1300px;
+    margin:0 auto;
+    text-align: center;
+}
+.news-content .imgdiv, .news-content .article{
+    display: inline-block;
+    vertical-align: top;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+.news-content .article{
+    padding-left:10px;
+}
+.news-content .imgdiv img{
+    width:100%;
+}
+.news-content .article h1{
+     margin:0 0 10px;    
+}
+.news-content .article h1 a{
+    color:#ddd;
+    font-size:24px;   
+    text-decoration:none;
+}
+.news-content .article h1 a:hover{
+    color:#8ACA32;
+}
+.news-content .article p{
+    text-indent: 2em;
+    color:#ddd;
+    margin:0;
+}
+.news-content .article .date{
+     color:#aaa;
+     margin:0;
+}
+.news-content .article .more{
+     color:#8ACA32;
+     display: inline-block;
+     margin-top:20px;
+}
+
+/* 最新动态结束 */
+/* 最新动态详情 */
+.news-detail-content{
+    padding:30px 200px;
+    background: url(../img/bg.jpg)  repeat;
+    overflow: hidden;
+    text-align: center;  
+}
+.news-detail-content h1{
+    color:#fff;
+    display: inline-block;
+    padding:20px;
+    text-align: center;    
+    padding-bottom: 15px;
+    border-bottom:1px solid #aaa;
+}
+.news-detail-content .date{
+    color:#bbb;
+    text-align: center;
+}
+.news-detail-content p{ 
+    text-align: left;    
+    color:#ddd;
+}
+.news-detail-content p img{
+    width:100%;
+}
+@media screen and (max-width: 768px) {
+    .news-detail-content{
+        padding:30px 40px;
+    }
+}
+
+/* 最新动态详情结束 */
+
+
+/* 联系我们 */
+.contact-content{    
+    background: url(../img/bg.jpg)  repeat;
+}
+.contact-content .contact-way{
+    padding:30px 20px;
+    margin:0 auto;
+    max-width:550px;    
+}
+.contact-content .contact-way p{    
+    color:#ddd;
+    font-size:18px;
+    font-weight: bold;
+}
+/* 联系我们结束 */
+
+
+/* 底部 */
+footer{
+    width: 100%;
+    height: 80px;
+    background-color: #222;
+}
+footer p{
+    color:#bbb;
+    text-align: center;
+    line-height: 80px;
+    margin:0;
+}
+/* 底部结束 */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
